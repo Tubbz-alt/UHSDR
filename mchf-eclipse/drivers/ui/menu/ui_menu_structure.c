@@ -389,6 +389,9 @@ const MenuDescriptor infoGroup[] =
     { MENU_SYSINFO, MENU_INFO, INFO_RTC, NULL,"Real Time Clock", UiMenuDesc("Battery Supported Real Time Clock present?") },
     { MENU_SYSINFO, MENU_INFO, INFO_LICENCE, NULL,"FW license", UiMenuDesc("Display license of firmware") },
     { MENU_SYSINFO, MENU_INFO, INFO_HWLICENCE, NULL,"HW license", UiMenuDesc("Display license of hardware") },
+	{ MENU_SYSINFO, MENU_INFO,INFO_UUID_P1, NULL,"CPU UUID1", UiMenuDesc("identification of fitted MCU UUID") },//[QBS]
+	{ MENU_SYSINFO, MENU_INFO,INFO_UUID_P2, NULL,"CPU UUID2", UiMenuDesc("identification of fitted MCU UUID") },//[QBS]
+	{ MENU_SYSINFO, MENU_INFO,INFO_UUID_P3, NULL,"CPU UUID3", UiMenuDesc("identification of fitted MCU UUID") },//[QBS]
 
     { MENU_SYSINFO, MENU_STOP, 0, NULL, NULL, UiMenuDesc("") }
 };

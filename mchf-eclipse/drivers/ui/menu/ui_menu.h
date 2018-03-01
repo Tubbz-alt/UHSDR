@@ -56,6 +56,9 @@ enum MENU_INFO_ITEM
     INFO_VHFUHFMOD,
     INFO_CPU,
     INFO_FLASH,
+	INFO_UUID_P1,//[QBS] unique 96bit holds first 32bits
+	INFO_UUID_P2,//[QBS] unique 96bit holds second 32bits
+	INFO_UUID_P3,//[QBS] unique 96bit holds third 32bits
     INFO_RAM,
     INFO_FW_VERSION,
     INFO_BL_VERSION,

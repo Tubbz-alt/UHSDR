@@ -40,7 +40,7 @@
 
 #include "arm_math.h"
 
-/**   
+/**
  * @ingroup groupFilters   
  */
 

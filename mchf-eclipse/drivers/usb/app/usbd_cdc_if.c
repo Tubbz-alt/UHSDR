@@ -121,7 +121,8 @@ typedef struct
 static CdvVcp_LineCoding_t CDC_Linecoding =
 {
         // 9600 8n1
-        .speed = 9600,
+		//38400 BAUD Under TESTING from 06-03-2018
+        .speed = 38400,//9600,//[QBS]38400 at this setting it allows CAT connection speed upto 38400BAUD
         .stop  = 0, // 1 stop bit
         .bits  = 8, // 8 data bits
         .parity = 0, // parity none

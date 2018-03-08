@@ -23,8 +23,8 @@
 #include "codec.h"
 
 // I2C addresses
-#define W8731_ADDR_0                    0x1A        // CS = 0, MODE to GND
-#define W8731_ADDR_1                    0x1B        // CS = 1, MODE to GND
+#define W8731_ADDR_0                    0x1A        // CS = 0, MODE to GND (tie low)
+#define W8731_ADDR_1                    0x1B        // CS = 1, MODE to DBVDD (tie high)//[QBS]
 
 // The 7 bits Codec address (sent through I2C interface)
 #define CODEC_ADDRESS                   (W8731_ADDR_0<<1)

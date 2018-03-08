@@ -22,6 +22,12 @@
 #include "audio_driver.h"
 #include "radio_management.h"
 
+//[QBS]s
+#include "config_storage.h"
+#include "ui_configuration.h"
+#include "serial_eeprom.h"
+//[QBS]e
+
 uint8_t limit_4bits(uint32_t in)
 {
     return in > 15 ? 15 : in;
@@ -633,6 +639,7 @@ bool CatDriver_Ft817_EEPROM_RW_Func(bool readEEPROM, uint16_t addr, uint8_t* dat
             retval = true;
             break;
         }
+
         }
     }
     return retval;
@@ -1213,6 +1220,13 @@ static void CatDriver_HandleCommands()
             resp[0] = 0;
             resp[1] = 0;
             uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
+//[QBS]s eeprom reading real
+//enable this to dump eeprom
+//            SerialEEPROM_ReadVariable(ee_addr, &resp[0]);//[QBS]read real eeprom data
+//            bc = 2;
+//[QBS]e
+
+///* Disable if using my real code above
             if (CatDriver_Ft817_EEPROM_Read(ee_addr,&resp[0]) && ee_addr < 0x1925)
             {
                 // please note: in case of second addr being invalid
@@ -1224,6 +1238,7 @@ static void CatDriver_HandleCommands()
             {
                 bc = 1;
             }
+//*/
             break;
         }
         case FT817_EEPROM_WRITE:

@@ -1011,8 +1011,12 @@ static void CatDriver_HandleCommands()
 
     cat_driver_sync_data();
 
+
     while (CatDriver_InterfaceBufferGetData(ft817.req,5))
     {
+       	UiLcdHy28_PrintText((ts.Layout->SM_IND.x + 180),(ts.Layout->SM_IND.y + 45),"cat",Red,Black,4);//[QBS] 2.8inch screen McHF
+
+
 #ifdef DEBUG_FT817
         int debug_idx;
         for (debug_idx = 0; debug_idx < 5 && ft817.cmd_cntr < FT817_MAX_CMD; debug_idx++ )
@@ -1021,6 +1025,8 @@ static void CatDriver_HandleCommands()
         }
         ft817.cmd_cntr++;
 #endif
+
+
 
         switch((Ft817_CatCmd_t)ft817.req[4])
         {
@@ -1139,7 +1145,7 @@ static void CatDriver_HandleCommands()
             case 4: // AM
                 new_mode = DEMOD_AM;
                 break;
-            case 8: // FM
+            case 8: // FM-W
                 new_fmdev5khz = true;
                 new_mode = DEMOD_FM;
                 break;
@@ -1286,6 +1292,7 @@ static void CatDriver_HandleCommands()
             bc = 1;
             break;
         case 255: /* FF sent out by HRD */
+
             break;
             // default:
             // while (1);

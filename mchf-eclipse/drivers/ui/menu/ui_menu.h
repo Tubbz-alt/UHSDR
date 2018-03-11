@@ -71,7 +71,7 @@ enum MENU_INFO_ITEM
 };
 
 const char* UiMenu_GetSystemInfo(uint32_t* m_clr_ptr, int info_item);
-#define MAX_MENUSIZE 14		//memory allocation of displayed menuitems at once, must be higher or equal to highest ts.Layout->MENUSIZE
+#define MAX_MENUSIZE 17//[QBS]14		//memory allocation of displayed menuitems at once, must be higher or equal to highest ts.Layout->MENUSIZE
 /*
 #ifdef USE_DISP_480_320
 //

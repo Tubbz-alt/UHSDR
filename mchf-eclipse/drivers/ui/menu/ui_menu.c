@@ -566,6 +566,18 @@ const char* UiMenu_GetSystemInfo(uint32_t* m_clr_ptr, int info_item)
     case INFO_RAM:
             snprintf(out,32,"%d",(ts.ramsize));
             break;
+//[QBS]s
+    case INFO_UUID_P1:
+    	    snprintf (out,32,"0x%08X",uuidPart1);
+			break;
+    case INFO_UUID_P2:
+        	    snprintf (out,32,"0x%08X",uuidPart2);
+    			break;
+    case INFO_UUID_P3:
+        	    snprintf (out,32,"0x%08X",uuidPart3);
+    			break;
+//[QBS]e
+
     case INFO_EEPROM:
     {
         const char* label = "";
@@ -640,6 +652,7 @@ const char* UiMenu_GetSystemInfo(uint32_t* m_clr_ptr, int info_item)
         }
     }
     break;
+#define OFFICIAL_BUILD//[QBS]
     case INFO_FW_VERSION:
     {
   		#ifdef OFFICIAL_BUILD

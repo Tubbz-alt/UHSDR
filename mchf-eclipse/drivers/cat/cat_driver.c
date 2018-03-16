@@ -728,6 +728,7 @@ typedef enum
     FT817_EEPROM_READ   = 0xbb,
     FT817_EEPROM_WRITE  = 0xbc,
     FT817_READ_TX_STATE = 0xbd,
+	FT817_EEPROM_ERASE  = 0xbe,//[QBS]
     FT817_READ_RX_STATE = 0xe7,
     FT817_PTT_STATE     = 0xf7,
     FT817_NOOP          = 0xff
@@ -1228,11 +1229,16 @@ static void CatDriver_HandleCommands()
             uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
 //[QBS]s eeprom reading real
 //enable this to dump eeprom
-//            SerialEEPROM_ReadVariable(ee_addr, &resp[0]);//[QBS]read real eeprom data
-//            bc = 2;
+//#define REAL_READ
+///*
+            SerialEEPROM_ReadVariable(ee_addr, &resp[0]);//[QBS]read real eeprom data
+            bc = 2;
+//*/
+
 //[QBS]e
 
 ///* Disable if using my real code above
+
             if (CatDriver_Ft817_EEPROM_Read(ee_addr,&resp[0]) && ee_addr < 0x1925)
             {
                 // please note: in case of second addr being invalid
@@ -1245,6 +1251,7 @@ static void CatDriver_HandleCommands()
                 bc = 1;
             }
 //*/
+//e
             break;
         }
         case FT817_EEPROM_WRITE:
@@ -1253,13 +1260,34 @@ static void CatDriver_HandleCommands()
             resp[0] = 0;
             bc = 1;
             uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
+
+/*
+            resp[0] = 0;
+            resp[1] = 0;
+            uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
+
+            SerialEEPROM_WriteVariable(ee_addr, &resp[0]);//[QBS]write real eeprom data
+            bc = 2;
+*/
+
+///*//[QBS]s
             if (ee_addr < 0x1925)
             {
                 CatDriver_Ft817_EEPROM_Write(ee_addr,&ft817.req[2]);
                 CatDriver_Ft817_EEPROM_Write(ee_addr+1,&ft817.req[3]);
             }
+//*///[QBS]e
             break;
         }
+//[QBS]s
+       case FT817_EEPROM_ERASE:
+                {
+                	 resp[0] = 0;
+                	 bc = 1;
+                 	 SerialEEPROM_Clear_Signature();
+                	 break;
+                }
+//[QBS]e
         case FT817_READ_TX_STATE:
             if(RadioManagement_IsTxDisabled()||(ts.txrx_mode != TRX_MODE_TX))
             {

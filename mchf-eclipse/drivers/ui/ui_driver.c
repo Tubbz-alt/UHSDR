@@ -146,6 +146,7 @@ const ulong tune_steps[T_STEP_MAX_STEPS] =
 		T_STEP_1HZ,
 		T_STEP_10HZ,
 		T_STEP_100HZ,
+		T_STEP_250HZ,//[QBS]
 		T_STEP_500HZ,
 		T_STEP_1KHZ,
 		T_STEP_5KHZ,
@@ -1354,6 +1355,12 @@ static void UiDriver_PressHoldStep(uchar is_up)//[QBS] added ability for 1mhz an
 		minus_idx = T_STEP_10HZ_IDX;		// use 10 Hz as small step size
 		plus_idx = T_STEP_1KHZ_IDX;		// use 1 kHz as large step size
 		break;
+//[QBS]s
+	case T_STEP_250HZ_IDX:	// 250Hz step size
+		minus_idx = T_STEP_100HZ_IDX;		// use 100 Hz as small step size
+		plus_idx = T_STEP_1KHZ_IDX;		// use 1 kHz as large step size
+		break;
+//[QBS]e
 	case T_STEP_10KHZ_IDX:	// 10 kHz step size
 	case T_STEP_100KHZ_IDX:	// 100 kHz step size
 		minus_idx = T_STEP_100HZ_IDX;	// use 100 Hz as small step size

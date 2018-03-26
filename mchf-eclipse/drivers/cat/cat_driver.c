@@ -715,6 +715,8 @@ static bool CatDriver_Ft817_EEPROM_Read(uint16_t addr,uint8_t* data_p)
 
 typedef enum
 {
+	FT817_LOCK_ON       = 0x00,//[QBS]
+	FT817_LOCK_OFF      = 0x80,//[QBS]
     FT817_SET_FREQ      = 0x01,
     FT817_GET_FREQ      = 0x03,
     FT817_SPLIT_ON      = 0x02,
@@ -724,7 +726,7 @@ typedef enum
     FT817_MODE_SET      = 0x07,
     FT817_PWR_ON        = 0x0f,
     FT817_TOGGLE_VFO    = 0x81,
-    FT817_A7            = 0xa7,
+    FT817_A7            = 0xa7,//[QBS] read info
     FT817_EEPROM_READ   = 0xbb,
     FT817_EEPROM_WRITE  = 0xbc,
     FT817_READ_TX_STATE = 0xbd,

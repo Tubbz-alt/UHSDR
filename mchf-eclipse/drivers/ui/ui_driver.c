@@ -6716,12 +6716,39 @@ void UiDriver_TaskHandler_MainTasks()
 			kbdChar = USBH_HID_GetASCIICode(k_pinfo);
 			switch(k_pinfo->keys[0])
 			{
+//[QBS]Key input debug
+//			UiDriver_TextMsgPutChar(k_pinfo->keys[0]);//[DEBUG
+//[QBS]e
 			case KEY_F1:
 				ts.ptt_req = true;
 				break;
 			case KEY_F2:
 				ts.tx_stop_req = true;
 				break;
+//[QBS]s
+			case KEY_LEFTARROW://[QBS] go down in frequency
+				UiDriver_HandleBandButtons(BUTTON_BNDM);//[QBS]go down a band
+//				UiDriver_PressHoldStep(1);// increase step size
+				break;
+			case KEY_RIGHTARROW://[QBS] go up in frequency
+				UiDriver_HandleBandButtons(BUTTON_BNDP);//[QBS]go up a band
+//				UiDriver_PressHoldStep(0);// decrease step size
+				break;
+			case KEY_UPARROW://[QBS] go up a band
+				break;
+			case KEY_DOWNARROW://[QBS] go down a band
+				break;
+
+			case KEY_MUTE://[QBS] mute radio audio
+//				audio_spkr_delayed_unmute_active = false;
+//				audio_spkr_volume_update_request = true;
+				break;
+			case KEY_VOLUME_DOWN://[QBS] radio audio volume down
+				break;
+			case KEY_VOLUME_UP://[QBS] radio audio volume up
+				break;
+
+//[QBS]e
 			}
 			if (kbdChar != '\0')
 			{

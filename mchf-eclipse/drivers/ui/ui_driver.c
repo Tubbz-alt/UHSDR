@@ -6692,6 +6692,7 @@ void UiDriver_TaskHandler_MainTasks()
 {
 
 	uint32_t now = ts.sysclock;
+	char MouseBuf;
 	//        HAL_GetTick()/10;
 
 	CatDriver_HandleProtocol();
@@ -6702,6 +6703,22 @@ void UiDriver_TaskHandler_MainTasks()
 
 #ifdef USE_USBHOST
 	MX_USB_HOST_Process();
+
+#ifdef USE_USBMOUSE//[QBS]s
+	if(USBH_HID_GetDeviceType(&hUsbHostHS) == HID_MOUSE)
+	{
+		HID_MOUSE_Info_TypeDef *m_pinfo;
+		m_pinfo = USBH_HID_GetMouseInfo(&hUsbHostHS);
+
+//			If(m_pinfo != NULL)
+//				{
+//
+//		sprintf(MouseBuf, "x=%4d y=%4d %d%d%d",m_pinfo->x, m_pinfo->y, m_pinfo->buttons[0],m_pinfo->buttons[1],m_pinfo->buttons[2]);
+//	            }
+
+		}
+
+#endif//[QBS]e
 
 #ifdef USE_USBKEYBOARD
 	if(USBH_HID_GetDeviceType(&hUsbHostHS) == HID_KEYBOARD)
@@ -6726,6 +6743,27 @@ void UiDriver_TaskHandler_MainTasks()
 				ts.tx_stop_req = true;
 				break;
 //[QBS]s
+			case KEY_F3:
+				break;
+			case KEY_F4:
+				break;
+			case KEY_F5:
+				break;
+			case KEY_F6:
+				break;
+			case KEY_F7:
+				break;
+			case KEY_F8:
+				break;
+			case KEY_F9:
+				break;
+			case KEY_F10:
+				break;
+			case KEY_F11:
+				break;
+			case KEY_F12:
+				break;
+
 			case KEY_LEFTARROW://[QBS] go down in frequency
 				UiDriver_HandleBandButtons(BUTTON_BNDM);//[QBS]go down a band
 //				UiDriver_PressHoldStep(1);// increase step size
@@ -6741,12 +6779,24 @@ void UiDriver_TaskHandler_MainTasks()
 
 			case KEY_MUTE://[QBS] mute radio audio
 //				audio_spkr_delayed_unmute_active = false;
-//				audio_spkr_volume_update_request = true;
+				ts.rx_temp_mute  = true;     // used in muting audio during band change
 				break;
 			case KEY_VOLUME_DOWN://[QBS] radio audio volume down
+				ts.rx_temp_mute  = false;     // used in muting audio during band change
+				ts.rx_gain[RX_AUDIO_SPKR].value=ts.rx_gain[RX_AUDIO_SPKR].value--;
+		        if(ts.rx_gain[RX_AUDIO_SPKR].value < 1)  // is volume control above highest hardware setting?
+		        {
+		        	ts.rx_gain[RX_AUDIO_SPKR].value = 1;    // is volume control above highest hardware setting?
+		        }
 				break;
 			case KEY_VOLUME_UP://[QBS] radio audio volume up
-				break;
+				ts.rx_temp_mute  = false;     // used in muting audio during band change
+				ts.rx_gain[RX_AUDIO_SPKR].value=ts.rx_gain[RX_AUDIO_SPKR].value++;
+		        if(ts.rx_gain[RX_AUDIO_SPKR].value > CODEC_SPEAKER_MAX_VOLUME)  // is volume control above highest hardware setting?
+		        {
+		        	ts.rx_gain[RX_AUDIO_SPKR].value = CODEC_SPEAKER_MAX_VOLUME;    // is volume control above highest hardware setting?
+		        }
+			break;
 
 //[QBS]e
 			}

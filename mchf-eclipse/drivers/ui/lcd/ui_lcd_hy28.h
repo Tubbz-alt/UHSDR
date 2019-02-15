@@ -26,6 +26,10 @@
 //
 #define White          		0xFFFF
 #define Black          		0x0000
+#define Grey7               0xBDF7//[QBS]
+#define Grey8               0x7BEF//[QBS]
+#define Brown               0x79E0//[QBS]
+
 #define Grey           		RGB(0xb8,0xbc,0xa8)	//=0xBDF5
 #define Blue           		RGB(0x50,0x50,0xFF)	// Brighter Blue	//Original - 0x001F =#0000FF
 #define Blue2          		0x051F				// =#00A0FF

@@ -468,6 +468,21 @@ typedef struct _USBH_HandleTypeDef
   osThreadId            thread; 
 #endif  
   
+//[QBS]s USBHUB support
+  /*
+    __IO uint8_t valid;
+    __IO uint8_t busy;
+
+  //  __IO uint8_t transfering;
+
+    uint8_t hub;
+    uint8_t address;
+
+    uint8_t prescaler;
+    uint8_t interfaces;
+    void*   USBH_ClassTypeDef_pData[USBH_MAX_NUM_INTERFACES];
+    */
+//[QBS]e
 } USBH_HandleTypeDef;
 
 

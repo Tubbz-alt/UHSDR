@@ -28,6 +28,32 @@
 #include "serial_eeprom.h"
 //[QBS]e
 
+//[QBS]s CONFIG
+void Write_Config_f ()
+{
+// open server config file & write to it
+	FILE	*f;
+	char	name[128];
+
+	sprintf (name, "server.cfg");
+
+//	con_printf(CON_TEXT,"\nWriting %s\n", name);
+
+	f = fopen (name, "wb");
+	if (!f)
+	{
+		printf ("\nCouldn't open %s\n", name);
+		return;
+	}
+
+	fprintf(f, "set sv_cheats  TEST\n");
+
+	fclose (f);
+}
+
+//[QBS]e CONFIG
+
+
 uint8_t limit_4bits(uint32_t in)
 {
     return in > 15 ? 15 : in;
@@ -1239,7 +1265,7 @@ static void CatDriver_HandleCommands()
 
 //[QBS]e
 
-///* Disable if using my real code above
+/* Disable if using my real code above
 
             if (CatDriver_Ft817_EEPROM_Read(ee_addr,&resp[0]) && ee_addr < 0x1925)
             {
@@ -1252,33 +1278,35 @@ static void CatDriver_HandleCommands()
             {
                 bc = 1;
             }
-//*/
+*/
 //e
             break;
         }
         case FT817_EEPROM_WRITE:
         {
-            // no op in most cases
-            resp[0] = 0;
-            bc = 1;
-            uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
 
-/*
+///*
             resp[0] = 0;
             resp[1] = 0;
             uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
 
             SerialEEPROM_WriteVariable(ee_addr, &resp[0]);//[QBS]write real eeprom data
             bc = 2;
-*/
+//*/
 
-///*//[QBS]s
+/*//[QBS]s disable if using real code above
+
+            // no op in most cases
+            resp[0] = 0;
+            bc = 1;
+            uint16_t ee_addr = (ft817.req[0] << 8) | ft817.req[1];
+
             if (ee_addr < 0x1925)
             {
                 CatDriver_Ft817_EEPROM_Write(ee_addr,&ft817.req[2]);
                 CatDriver_Ft817_EEPROM_Write(ee_addr+1,&ft817.req[3]);
             }
-//*///[QBS]e
+*///[QBS]e
             break;
         }
 //[QBS]s

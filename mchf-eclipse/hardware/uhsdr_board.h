@@ -85,7 +85,9 @@
 #ifdef USE_USBHOST
 // define additional USBHOST related "switches" only here!
 	// #define USE_USBDRIVE
+	#define USE_USBMOUSE//[QBS]
 	#define USE_USBKEYBOARD
+
 #endif
 
 // OPTION
@@ -490,7 +492,7 @@ typedef enum
 #define TX_POWER_FACTOR_160_DEFAULT	50
 //
 // Enumeration of colours used in spectrum scope display
-//
+
 typedef enum
 {
     SPEC_WHITE = 0,
@@ -512,7 +514,9 @@ typedef enum
     SPEC_GREY4,
     SPEC_GREY5,
     SPEC_GREY6,
-    SPEC_MAX_COLOUR,
+	SPEC_GREY7,//[QBS]
+	SPEC_GREY8,//[QBS]
+    SPEC_MAX_COLOUR,// SPEC_MAX_COLOUR gains its value here
 } mchf_color_t;
 
 typedef struct {

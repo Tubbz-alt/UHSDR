@@ -432,6 +432,7 @@ void UiMenu_HandleIQAdjustPhase(int var, uint8_t mode, char* options, uint32_t* 
     UiMenu_HandleIQAdjust(var, mode, options, clr_ptr, val_ptr, txrx_mode, MIN_IQ_PHASE_BALANCE, MAX_IQ_PHASE_BALANCE, valid_for);
 }
 
+
 const ColorNameValue MchfColor_Id2ValueName[SPEC_MAX_COLOUR] =
 {
         { White,    "Whit"},
@@ -440,6 +441,7 @@ const ColorNameValue MchfColor_Id2ValueName[SPEC_MAX_COLOUR] =
         { Red,      "Red1"},
         { Red2,     "Red2"},
         { Red3,     "Red3"},
+        { Brown,    "Brwn"},//[QBS]
         { Magenta,  "Mgnt"},
         { Green,    "Gren"},
         { Cyan,     "Cyan"},
@@ -453,6 +455,8 @@ const ColorNameValue MchfColor_Id2ValueName[SPEC_MAX_COLOUR] =
         { Grey4,    "Gry4"},
         { Grey5,    "Gry5"},
         { Grey6,    "Gry6"},
+		{ Grey7,    "Gry7"},//[QBS]
+		{ Grey8,    "Gry8"},//[QBS]
 };
 
 

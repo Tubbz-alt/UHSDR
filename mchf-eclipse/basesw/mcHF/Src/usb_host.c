@@ -50,6 +50,7 @@
 #include "usbh_cdc.h"
 #include "usbh_msc.h"
 #include "usbh_hid.h"
+//#include "..\Middlewares\ST\STM32_USB_Host_Library\Class\HUB\usbh_hub.h"//[QBS]USBHUB
 #include "usbh_mtp.h"
 #include "fatfs.h"
 #include "uhsdr_board.h"
@@ -93,12 +94,15 @@ void MX_USB_HOST_Init(void)
 #endif
 #if	defined(USE_USBKEYBOARD) && !defined(BOOTLOADER_BUILD)
 	USBH_RegisterClass(&hUsbHostHS, USBH_HID_CLASS);
-#endif
+//	USBH_RegisterClass(&hUsbHostHS, USBH_HUB_CLASS);//[QBS]USBHUB
+
+	#endif
 #if 0
 	USBH_RegisterClass(&hUsbHostHS, USBH_MTP_CLASS);
 #endif
 	USBH_Start(&hUsbHostHS);
 }
+
 
 /*
  * Background task
@@ -106,7 +110,8 @@ void MX_USB_HOST_Init(void)
 void MX_USB_HOST_Process(void) 
 {
   /* USB Host Background task */
-    USBH_Process(&hUsbHostHS); 						
+    USBH_Process(&hUsbHostHS);
+
 }
 /*
  * user callbak definition

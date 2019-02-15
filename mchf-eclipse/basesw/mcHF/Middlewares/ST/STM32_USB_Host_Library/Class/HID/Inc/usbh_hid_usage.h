@@ -98,11 +98,11 @@
 /****************************************************/
 #define HID_USAGE_UNDEFINED     uint16_t (0x00)   /* Undefined */
 #define HID_USAGE_POINTER       uint16_t (0x01)   /* Pointer (Physical Collection) */
-#define HID_USAGE_MOUSE         uint16_t (0x02)   /* Mouse (Application Collection) */
+#define HID_USAGE_MOUSE         uint16_t (0x02)   /* Mouse (Application Collection) *///[QBS] HID_DEVICE_UP HID MOUSE
 /* 03 Reserved */
-#define HID_USAGE_JOYSTICK      uint16_t (0x04)   /* Joystick (Application Collection) */
+#define HID_USAGE_JOYSTICK      uint16_t (0x04)   /* Joystick (Application Collection) */// HID_DEVICE_UP [QBS] HID JOYSTICK
 #define HID_USAGE_GAMEPAD       uint16_t (0x05)   /* Game Pad (Application Collection) */
-#define HID_USAGE_KBD           uint16_t (0x06)   /* Keyboard (Application Collection) */
+#define HID_USAGE_KBD           uint16_t (0x06)   /* Keyboard (Application Collection) */// HID_DEVICE_UP [QBS] HID KEYBOARD
 #define HID_USAGE_KEYPAD        uint16_t (0x07)   /* Keypad (Application Collection) */
 #define HID_USAGE_MAX_CTR       uint16_t (0x08)   /* Multi-axis Controller (Application Collection) */
 /* 09-2F Reserved */

@@ -75,7 +75,7 @@
 #endif
 #define TP_IRQ_PIO				GPIOA
 
-#define DAC0 					GPIO_PIN_4
+#define DAC0 					GPIO_PIN_4//[QBS] investigate WIFI
 #define DAC0_PIO       			GPIOA
 // pin 5
 //#define DAC1 					GPIO_PIN_5
@@ -101,7 +101,7 @@
 #endif
 #define TP_CS_PIO				GPIOA
 // pin 10
-#define BAND2 					GPIO_PIN_10
+#define BAND2 					GPIO_PIN_10//[QBS]investigate WIFI
 #define BAND2_PIO       		GPIOA
 // pin 11
 // USB DFU
@@ -136,7 +136,7 @@
 #define BUTTON_M2 				GPIO_PIN_3
 #define BUTTON_M2_PIO       	GPIOB
 // pin 4
-#define ENC_ONE_CH1 			GPIO_PIN_4
+#define ENC_ONE_CH1 			GPIO_PIN_4//[QBS] investigate WIFI
 #define ENC_ONE_CH1_PIO       	GPIOB
 // pin 5
 #define ENC_ONE_CH2 			GPIO_PIN_5
@@ -154,7 +154,7 @@
 #define GREEN_LED 				GPIO_PIN_9
 #define GREEN_LED_PIO       	GPIOB
 // pin 10
-#define I2C2_SCL_PIN            GPIO_PIN_10
+#define I2C2_SCL_PIN            GPIO_PIN_10//[QBS]investigate WIFI
 #define I2C2_SCL_GPIO           GPIOB
 // pin 11
 #define I2C2_SDA_PIN            GPIO_PIN_11
@@ -188,7 +188,7 @@
 #define LCD_MOSI 				GPIO_PIN_3
 #define LCD_MOSI_PIO         	GPIOC
 // pin 4
-#define BUTTON_STEPM			GPIO_PIN_4
+#define BUTTON_STEPM			GPIO_PIN_4//[QBS] investigate WIFI
 #define BUTTON_STEPM_PIO       	GPIOC
 // pin 5
 #define BUTTON_STEPP			GPIO_PIN_5
@@ -206,7 +206,7 @@
 #define CODEC_CLOCK 			GPIO_PIN_9
 #define CODEC_CLOCK_PIO         GPIOC
 // pin 10
-#define CODEC_I2S_SCK 			GPIO_PIN_10
+#define CODEC_I2S_SCK 			GPIO_PIN_10//[QBS]investigate WIFI
 #define CODEC_I2S_SCK_PIO       GPIOC
 // pin 11
 #define CODEC_I2S_SDI 			GPIO_PIN_11
@@ -247,7 +247,7 @@
 #define LCD_RESET				GPIO_PIN_3
 #define LCD_RESET_PIO      		GPIOD
 // pin 4
-#define LCD_RD					GPIO_PIN_4
+#define LCD_RD					GPIO_PIN_4//[QBS] investigate WIFI
 #define LCD_RD_PIO      		GPIOD
 // pin 5
 #define LCD_WR					GPIO_PIN_5
@@ -265,7 +265,7 @@
 #define LCD_D16					GPIO_PIN_9
 #define LCD_D16_PIO      		GPIOD
 // pin 10
-#define LCD_D17					GPIO_PIN_10
+#define LCD_D17					GPIO_PIN_10//[QBS]investigate WIFI
 #define LCD_D17_PIO      		GPIOD
 // pin 11
 #define LCD_RS					GPIO_PIN_11
@@ -299,7 +299,7 @@
 #define BUTTON_F4				GPIO_PIN_3
 #define BUTTON_F4_PIO       	GPIOE
 // pin 4
-#define BUTTON_G3				GPIO_PIN_4
+#define BUTTON_G3				GPIO_PIN_4//[QBS] investigate WIFI
 #define BUTTON_G3_PIO       	GPIOE
 // pin 5
 #define BUTTON_F5				GPIO_PIN_5
@@ -317,7 +317,7 @@
 #define LCD_D6					GPIO_PIN_9
 #define LCD_D6_PIO      		GPIOE
 // pin 10
-#define LCD_D7					GPIO_PIN_10
+#define LCD_D7					GPIO_PIN_10//[QBS]investigate WIFI
 #define LCD_D7_PIO      		GPIOE
 // pin 11
 #define LCD_D10					GPIO_PIN_11
@@ -389,7 +389,7 @@
 #define ADC2_RET                GPIO_PIN_3
 #define ADC2_RET_PIO            GPIOA
 // pin 4
-#define DAC_CH1                 GPIO_PIN_4
+#define DAC_CH1                 GPIO_PIN_4//[QBS] investigate WIFI
 #define DAC_CH1_PIO             GPIOA
 // pin 5
 #define DAC_CH2                 GPIO_PIN_5
@@ -405,7 +405,7 @@
 #define TP_CS                   GPIO_PIN_9
 #define TP_CS_PIO               GPIOA
 // pin 10
-#define BAND2                   GPIO_PIN_10
+#define BAND2                   GPIO_PIN_10//[QBS] investigate WIFI
 #define BAND2_PIO               GPIOA
 // pin 11
 // USB DFU
@@ -440,7 +440,7 @@
 #define BUTTON_M2               GPIO_PIN_3
 #define BUTTON_M2_PIO           GPIOB
 // pin 4
-#define ENC_ONE_CH1             GPIO_PIN_4
+#define ENC_ONE_CH1             GPIO_PIN_4//[QBS] investigate WIFI
 #define ENC_ONE_CH1_PIO         GPIOB
 // pin 5
 #define ENC_ONE_CH2             GPIO_PIN_5
@@ -458,7 +458,7 @@
 #define GREEN_LED               GPIO_PIN_9
 #define GREEN_LED_PIO           GPIOB
 // pin 10
-#define I2C2_SCL_PIN            GPIO_PIN_10
+#define I2C2_SCL_PIN            GPIO_PIN_10//[QBS] investigate WIFI
 #define I2C2_SCL_GPIO           GPIOB
 // pin 11
 #define I2C2_SDA_PIN            GPIO_PIN_11
@@ -492,7 +492,7 @@
 #define LCD_MOSI                GPIO_PIN_3
 #define LCD_MOSI_PIO            GPIOC
 // pin 4
-#define BUTTON_STEPM            GPIO_PIN_4
+#define BUTTON_STEPM            GPIO_PIN_4//[QBS] investigate WIFI
 #define BUTTON_STEPM_PIO        GPIOC
 // pin 5
 #define BUTTON_STEPP            GPIO_PIN_5
@@ -510,7 +510,7 @@
 #define CODEC_CLOCK             GPIO_PIN_9
 #define CODEC_CLOCK_PIO         GPIOC
 // pin 10
-#define CODEC_I2S_SCK           GPIO_PIN_10
+#define CODEC_I2S_SCK           GPIO_PIN_10//[QBS] investigate WIFI
 #define CODEC_I2S_SCK_PIO       GPIOC
 // pin 11
 #define CODEC_I2S_SDI           GPIO_PIN_11
@@ -547,7 +547,7 @@
 #define LCD_RESET               GPIO_PIN_3
 #define LCD_RESET_PIO           GPIOD
 // pin 4
-#define LCD_RD                  GPIO_PIN_4
+#define LCD_RD                  GPIO_PIN_4//[QBS] investigate WIFI
 #define LCD_RD_PIO              GPIOD
 // pin 5
 #define LCD_WR                  GPIO_PIN_5
@@ -565,7 +565,7 @@
 #define LCD_D14                 GPIO_PIN_9
 #define LCD_D14_PIO             GPIOD
 // pin 10
-#define LCD_D15                 GPIO_PIN_10
+#define LCD_D15                 GPIO_PIN_10//[QBS] investigate WIFI
 #define LCD_D15_PIO             GPIOD
 // pin 11
 //SAI INTERFACE: SAI2_SD_A
@@ -598,7 +598,7 @@
 #define BUTTON_F4               GPIO_PIN_3
 #define BUTTON_F4_PIO           GPIOE
 // pin 4
-#define BUTTON_G3               GPIO_PIN_4
+#define BUTTON_G3               GPIO_PIN_4//[QBS] investigate WIFI
 #define BUTTON_G3_PIO           GPIOE
 // pin 5
 #define BUTTON_F5               GPIO_PIN_5
@@ -616,7 +616,7 @@
 #define LCD_D6                  GPIO_PIN_9
 #define LCD_D6_PIO              GPIOE
 // pin 10
-#define LCD_D7                  GPIO_PIN_10
+#define LCD_D7                  GPIO_PIN_10//[QBS] investigate WIFI
 #define LCD_D7_PIO              GPIOE
 // pin 11
 #define LCD_D8                  GPIO_PIN_11
@@ -648,7 +648,7 @@
 #define ADC3_FWD                GPIO_PIN_3
 #define ADC3_FWD_PIO            GPIOF
 // pin 3
-// pin 4
+// pin 4//[QBS] investigate WIFI
 // pin 5
 #define BUTTON_E2               GPIO_PIN_5
 #define BUTTON_E2_PIO           GPIOF
@@ -657,7 +657,7 @@
 // pin 8
 // pin 9
 // pin 10
-#define BUTTON_E3               GPIO_PIN_10
+#define BUTTON_E3               GPIO_PIN_10//[QBS] investigate WIFI
 #define BUTTON_E3_PIO           GPIOF
 // pin 11
 #define BUTTON_S18              GPIO_PIN_11
@@ -692,7 +692,7 @@
 #define LCD_RS                  GPIO_PIN_3
 #define LCD_RS_PIO              GPIOG
 // pin 4
-#define TP_IRQ                  GPIO_PIN_4
+#define TP_IRQ                  GPIO_PIN_4//[QBS] investigate WIFI
 #define TP_IRQ_PIO              GPIOG
 // pin 5
 #define AUDIO_PA_EN             GPIO_PIN_5
@@ -707,7 +707,7 @@
 #define AUDIO_MIC_BIAS          GPIO_PIN_8
 #define AUDIO_MIC_BIAS_PIO      GPIOG
 // pin 9
-// pin 10
+// pin 10 //[QBS] investigate WIFI
 // pin 11
 #define BUTTON_G4               GPIO_PIN_11
 #define BUTTON_G4_PIO           GPIOG

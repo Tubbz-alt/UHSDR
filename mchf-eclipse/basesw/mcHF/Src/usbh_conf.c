@@ -50,6 +50,8 @@ void Error_Handler(void);
 /*******************************************************************************
                        LL Driver Callbacks (HCD -> USB Host Library)
 *******************************************************************************/
+
+//extern  USBH_HandleTypeDef hUsbHostHS[5];//[QBS] USBHUB
 /* MSP Init */
 
 void HAL_HCD_MspInit(HCD_HandleTypeDef* hcdHandle)

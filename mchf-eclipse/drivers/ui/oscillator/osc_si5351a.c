@@ -344,6 +344,7 @@ static void Si5351a_SetPPM(float32_t ppm)
 
 static Oscillator_ResultCodes_t Si5351a_PrepareNextFrequency(uint32_t freq, int temp_factor)
 {
+
 #ifdef TEST_QUADRATURE
 	// TODO: Replace this with a proper configurable switch point, the current limit is the minimum frequency we can do 90 degree phase
 	si5351a_state.next.phasedOutput = freq > SI5351_MIN_FREQ_PHASE90*TUNE_MULT;
@@ -352,6 +353,11 @@ static Oscillator_ResultCodes_t Si5351a_PrepareNextFrequency(uint32_t freq, int 
 		freq /= TUNE_MULT;
 	}
 #endif
+//[QBS]S
+	 if (freq <65000000) {freq *=4; }//[QBS] RS-928PLUS Hack
+	 if (freq >270000000) { freq /=2; }//[QBS] RS-928PLUS Hack
+//[QBS]e
+
 	return Si5351a_CalculateConfig(freq, &si5351a_state.next, &si5351a_state.current) == true?OSC_OK:OSC_TUNE_IMPOSSIBLE;
 }
 

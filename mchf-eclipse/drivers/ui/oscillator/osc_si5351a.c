@@ -27,9 +27,9 @@
 // reference oscillator xtal frequency
 #define SI5351_XTAL_FREQ		27000000			// Crystal frequency
 #define SI5351_MIN_PLL			405000000			// Min PLL frequency, officially it is 600 Mhz, but 405 seems to work just fine.
-#define SI5351_MAX_PLL		    900000000			// Max PLL frequency, officially it is 900 Mhz, tested with ~1168 Mhz
+#define SI5351_MAX_PLL		    1100000000//[QBS]900000000			// Max PLL frequency, officially it is 900 Mhz, tested with ~1168 Mhz
 
-#define SI5351_MAX_DIVIDER				900
+#define SI5351_MAX_DIVIDER				1100//[QBS]900
 
 #define SI5351_MAX_DIVIDER_PHASE90		126
 // Max value for a divider if we want 90 degree phased clock, must be even and <=127
